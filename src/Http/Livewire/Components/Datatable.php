@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Senna\Core\Http\Livewire\Components;
+namespace Senna\Admin\Http\Livewire\Components;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
-use Senna\Core\Http\Livewire\Traits\WithBulkActions;
-use Senna\Core\Http\Livewire\Traits\WithCachedRows;
-use Senna\Core\Http\Livewire\Traits\WithDelegate;
-use Senna\Core\Http\Livewire\Traits\WithPerPagePagination;
-use Senna\Core\Http\Livewire\Traits\WithSorting;
+use Senna\Admin\Http\Livewire\Traits\WithBulkActions;
+use Senna\Admin\Http\Livewire\Traits\WithCachedRows;
+use Senna\Admin\Http\Livewire\Traits\WithDelegate;
+use Senna\Admin\Http\Livewire\Traits\WithPerPagePagination;
+use Senna\Admin\Http\Livewire\Traits\WithSorting;
 
 use Livewire\Component;
 
