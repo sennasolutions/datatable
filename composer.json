@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0"
+        "php": "^7.4|^8.0",
+        "senna/utils": "dev-main"
     },
     "autoload": {
         "psr-4": {
@@ -36,5 +37,12 @@
     "scripts": {
         "test": "vendor/bin/phpunit --testdox",
         "test-f": "vendor/bin/phpunit --filter"
-    }
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../utils"
+        }
+    ]
 }
