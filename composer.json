@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^7.4|^8.0",
-        "senna/utils": "dev-main"
+        "senna/ui": "dev-main"
     },
     "autoload": {
         "psr-4": {
@@ -39,10 +39,27 @@
         "test-f": "vendor/bin/phpunit --filter"
     },
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "type": "path",
             "url": "../utils"
+        },
+        {
+            "type": "path",
+            "url": "../ui"
+        },
+        {
+            "type": "path",
+            "url": "../cms"
+        },
+        {
+            "type": "path",
+            "url": "../media"
+        },
+        {
+            "type": "path",
+            "url": "../admin"
         }
     ]
 }
