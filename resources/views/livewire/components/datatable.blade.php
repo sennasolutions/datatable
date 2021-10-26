@@ -101,14 +101,14 @@
                 $compare = $item[1] === "LIKE" ? "contains" : $item[1];
                 $value = str_replace("%", "", $item[2])
             @endphp
-            <x-senna.tag.gray class="mr-2 mb-2 shadow-lg flex flex-grow-0 items-center !p-2 space-x-1" colorClass="bg-primary-color text-white">
+            <x-senna.tag.dark class="mr-2 mb-2 shadow-lg flex flex-grow-0 items-center !p-2 space-x-1" colorClass="bg-primary-color text-white">
                 <span>{{ $prop }}</span>
                 <span class="opacity-50">{{ $compare }}</span>
                 <span>{{ $value }}</span>
                 <button wire:click="removeFilter({{ $index }})">
                     <x-heroicon-s-x class="w-4"></x-heroicon-s-x>
                 </button>
-            </x-senna.tag.gray>
+            </x-senna.tag.dark>
         @endforeach
     </div>
     @endif
