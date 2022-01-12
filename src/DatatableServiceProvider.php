@@ -54,7 +54,7 @@ class DatatableServiceProvider extends ServiceProvider {
 
     public function configureRoutes() {
         Route::group([
-            'middleware' => config('senna.middleware'),
+            'middleware' => config('senna.admin_middleware'),
             'prefix' => config('senna.prefix')
         ], function () {
             $this->loadRoutesFrom(__DIR__ . '/../routes/datatable.php');
