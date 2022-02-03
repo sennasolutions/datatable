@@ -20,7 +20,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Senna\\Tests\\": "tests"
+            "Senna\\Datatable\\Tests\\": "tests"
         }
     },
     "require-dev": {
