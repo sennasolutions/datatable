@@ -21,7 +21,7 @@
   
     <div class="top-header flex space-x-2 items-center">
         <div>
-            <x-senna.delegate name="title" :delegate="$delegate['_class']"></x-senna.delegate>
+            <x-senna.delegate name="title" :delegate="$this->getDelegate()"></x-senna.delegate>
         </div>
 
         <div class="flex !ml-auto">
@@ -130,7 +130,7 @@
                     @endphp
 
                     <x-senna.table.heading :sticky="$col['sticky'] ?? false" :sortBy="$sortBy" :sortField="$sortField" :sortDirection="$sortDirection" class="font-semibold {{ $headerClass }}" width="{{ $col['width'] ?? '' }}">
-                        <x-senna.delegate name="header:{prop}" :data="['col' => $col, 'prop' => $col['prop']]" :delegate="$delegate['_class']">
+                        <x-senna.delegate name="header:{prop}" :data="['col' => $col, 'prop' => $col['prop']]" :delegate="$this->getDelegate()">
                             {{ $col["label"] }}
                         </x-senna.delegate>
                     </x-senna.table.heading>
@@ -168,7 +168,7 @@
                                         <span>{{ __('Delete') }}</span>
                                     </x-senna.dropdown.item>
                               
-                                    <x-senna.delegate name="withSelected" :delegate="$delegate['_class']" />
+                                    <x-senna.delegate name="withSelected" :delegate="$this->getDelegate()" />
                                 </x-slot>
                             </x-senna.dropdown>
 
@@ -201,7 +201,7 @@
                             @if($col['component'] ?? null)
                                 <x-senna.dynamic :component="$col['component']" :data="['row' => $row, 'prop' => $col['prop'], 'col' => $col]"></x-senna.dynamic>
                             @else
-                                <x-senna.delegate name="row:{prop}" :data="['row' => $row, 'prop' => $col['prop'], 'col' => $col]" :delegate="$delegate['_class']">
+                                <x-senna.delegate name="row:{prop}" :data="['row' => $row, 'prop' => $col['prop'], 'col' => $col]" :delegate="$this->getDelegate()">
                                     @if($col['editable'])
                                     <input wire:model.lazy="{{ str_replace("*", $key, $col['wireModel']) }}" />
                                     @else
