@@ -114,7 +114,7 @@
     @endif
 
     {{-- Table --}}
-    <div class='main-table overflow-x-auto shadow-xl border rounded-md border-gray-200 {{ $classes['table-wrapper'] ?? '' }}'>
+    <div class='main-table overflow-x-auto shadow-xl border rounded-md border-gray-200 {{ $classes['table.wrapper'] ?? '' }}'>
         <x-senna.table class="w-full {{ $classes['table'] ?? '' }}">
             @if($showHeaders)
             {{-- Head --}}
