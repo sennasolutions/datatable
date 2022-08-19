@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\View\Compilers\BladeCompiler;
 use Senna\Datatable\Admin\DatatableAdmin;
 use Livewire\Livewire;
-use Senna\Admin\Addons;
+use Senna\Admin\MainMenu;
+
 
 class DatatableServiceProvider extends ServiceProvider {
 
@@ -31,7 +32,7 @@ class DatatableServiceProvider extends ServiceProvider {
 
         Route::matched(function()
         {
-            Addons::registerInMainMenu("datatable", "Datatable", route('senna.datatable'), "cms", false);
+            MainMenu::register("datatable", "Datatable", route('senna.datatable'), "cms", false);
         });
     }
 

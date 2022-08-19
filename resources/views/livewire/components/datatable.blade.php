@@ -81,7 +81,7 @@
             @if($showSearch)
             <x-senna.input wire:model="search" 
                 placeholder="Search in table" 
-                shortcut="cmd.f"
+                {{-- shortcut="cmd.f" --}}
                 style="transition-property: width;" 
                 inputClass="cursor-pointer !pl-12 focus:!w-52 w-7 {{ strlen($search) > 0 ? '!w-52' : '' }} pr-0 focus:!ring-0 transition-all !border-none !bg-transparent">
                 <x-slot name="prefix">
