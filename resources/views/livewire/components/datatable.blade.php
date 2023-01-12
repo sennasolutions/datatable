@@ -27,7 +27,7 @@
         <div class="flex !ml-auto">
             @if($showFilters)
             {{-- Add filter --}}
-            <x-senna.dropdown :closeOnInnerclick="false" :open="false" align="right" widthClass="" contentClass="shadow-lg bg-white flex border !ring-0">
+            <x-senna.dropdown :closeOnInnerclick="false" :open="false" align="right">
                 <x-slot name="trigger">
                     <x-senna.button class="shadow-none" colorClass="text-black bg-transparent pr-2 pl-0 focus:ring-0">
                         {{-- <x-heroicon-s-adjustments class="w-5"></x-heroicon-s-adjustments> --}}
@@ -35,7 +35,7 @@
                         <span>{{ __('Filters') }}</span>
                     </x-senna.button>
                 </x-slot>
-                <x-slot name="content">
+                <x-slot name="content" class="shadow-lg bg-white flex border !ring-0 !w-auto">
                     @if($newFilterProp)
                     {{-- Dropdown left --}}
                     <div class="flex-grow w-72 p-4">
