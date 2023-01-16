@@ -55,6 +55,10 @@
         },
         {
             "type": "path",
+            "url": "../package-tools"
+        },
+        {
+            "type": "path",
             "url": "../media"
         },
         {
