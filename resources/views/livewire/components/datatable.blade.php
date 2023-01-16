@@ -85,7 +85,7 @@
                 style="transition-property: width;" 
                 inputClass="cursor-pointer !pl-12 focus:!w-52 w-7 {{ strlen($search) > 0 ? '!w-52' : '' }} pr-0 focus:!ring-0 transition-all !border-none !bg-transparent">
                 <x-slot name="prefix">
-                    <x-heroicon-s-search class="w-5"></x-heroicon-s-search>
+                    <x-heroicon-s-magnifying-glass class="w-5"></x-heroicon-s-magnifying-glass>
                 </x-slot>
             </x-senna.input>
             @endif
@@ -106,7 +106,7 @@
                 <span class="opacity-50">{{ $compare }}</span>
                 <span>{{ $value }}</span>
                 <button wire:click="removeFilter({{ $index }})">
-                    <x-heroicon-s-x class="w-4"></x-heroicon-s-x>
+                    <x-heroicon-s-x-mark class="w-4"></x-heroicon-s-x-mark>
                 </button>
             </x-senna.tag.dark>
         @endforeach
