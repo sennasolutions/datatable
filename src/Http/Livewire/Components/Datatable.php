@@ -187,7 +187,7 @@ class Datatable extends Component
         if ($item === "selected") {
             $id = $this->identifier ? $this->identifier . ':' : '';
 
-            $this->emit('datatable:' . $id . "selected", $this->selected);
+            $this->dispatch('datatable:' . $id . "selected", $this->selected);
         }
     }
 

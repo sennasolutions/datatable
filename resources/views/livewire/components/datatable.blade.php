@@ -1,7 +1,7 @@
 <div class="{{ $classes['wrapper'] ?? '' }}">
     {{-- Delete modal --}}
     <form wire:submit.prevent="deleteSelected">
-        <x-senna.modal.confirm wire:model.defer="showDeleteModal">
+        <x-senna.modal.confirm wire:model="showDeleteModal">
             <x-slot name="title">
                 {{ sprintf(__('Delete %d %s'), count($selected), count($selected) === 1 ? __("item") : __("items")) }}
             </x-slot>
@@ -40,7 +40,7 @@
                     {{-- Dropdown left --}}
                     <div class="flex-grow w-72 p-4">
                         <form wire:submit.prevent="setNewFilter">
-                        <x-senna.input.select-native class="mb-2" inputClass="!border-none focus:!ring-0 mb-2" wire:model="newFilterOperator">
+                        <x-senna.input.select-native class="mb-2" inputClass="!border-none focus:!ring-0 mb-2" wire:model.live="newFilterOperator">
                             <option value="LIKE">{{ __('Contains') }}</option>
                             <option value="=">{{ __('Is equal') }}</option>
                             <option value="<>">{{ __('Is not') }}</option>
@@ -50,7 +50,7 @@
                             <option value="<=">{{ __('Is smaller than or equal') }}</option>
                         </x-senna.input.select-native>
 
-                        <x-senna.input wire:model="newFilterCondition" class="mb-2" prefixClass="z-10 !pl-1 !pointer-events-auto"></x-senna.input>
+                        <x-senna.input wire:model.live="newFilterCondition" class="mb-2" prefixClass="z-10 !pl-1 !pointer-events-auto"></x-senna.input>
                         <div class="mt-4 flex">
                             <x-senna.button.gray x-on:click="open=false">
                                 {{ __('Cancel') }}
@@ -79,7 +79,7 @@
             @endif
             
             @if($showSearch)
-            <x-senna.input wire:model="search" 
+            <x-senna.input wire:model.live="search" 
                 placeholder="Search in table" 
                 {{-- shortcut="cmd.f" --}}
                 style="transition-property: width;" 
@@ -120,7 +120,7 @@
             {{-- Head --}}
             <thead class="bg-gray-50">
                 <x-senna.table.heading class="w-4">
-                    <x-senna.input.checkbox wire:model="selectPage"></x-senna.input.checkbox>
+                    <x-senna.input.checkbox wire:model.live="selectPage"></x-senna.input.checkbox>
                 </x-senna.table.heading>
                 @foreach($cols as $col)
                     @if( !($col['visible'] ?? true) ) @continue @endif
@@ -193,7 +193,7 @@
                         @if($isSelected)
                         <div class="bg-primary-color absolute inset-y-0 w-1 left-0"></div>
                         @endif
-                        <x-senna.input.checkbox wire:key="check-{{ $row->id }}" value="{{ $row->id }}" wire:model="selected"/>
+                        <x-senna.input.checkbox wire:key="check-{{ $row->id }}" value="{{ $row->id }}" wire:model.live="selected"/>
                     </x-senna.table.cell>
                     @foreach($cols as $col)
                         @if( !($col['visible'] ?? true) ) @continue @endif
